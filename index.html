@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zaid</title>
-  <meta name="description" content="Zaid — روبوت محادثة ذكي يحوّل الزوار إلى عملاء حقيقيين باستخدام الذكاء الاصطناعي.">
+  <title>ZAID</title>
+  <meta name="description" content="ZAID — روبوت محادثة ذكي يحوّل الزوار إلى عملاء حقيقيين باستخدام الذكاء الاصطناعي.">
   <link rel="canonical" href="https://yourwebsite.com/">
-    <link rel="icon" type="image/png" href="image/logo3.png">
-
+  <link rel="icon" type="image/png" href="image/logo3.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Zaid | روبوت محادثة ذكي">
+  <meta property="og:title" content="ZAID | روبوت محادثة ذكي">
   <meta property="og:description" content="روبوت محادثة ذكي لمواقع الويب ووسائل التواصل الاجتماعي. ابدأ الآن!">
   <meta property="og:image" content="logo.png">
   <meta property="og:url" content="https://yourwebsite.com/">
@@ -21,6 +20,7 @@
   <!-- ملفات الموقع -->
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
@@ -29,20 +29,46 @@
     <div class="spinner"></div>
   </div>
 
+
+<!-- 
+<div id="smartBanner" class="smart-banner">
+  <div class="banner-collapsed">
+    <span>✨ عرض حصري</span>
+  </div>
+  <div class="banner-expanded hidden">
+    <div class="banner-content">
+      <div class="banner-desc">
+        <strong id="bannerTitle">عرض رمضان المبارك</strong>
+        <p id="bannerDesc"> اتمتة اول مهمة بعرض يصل الى 40%</p>
+      </div>
+
+      <div class="banner-actions">
+        <div class="banner-price" id="bannerPrice">$49</div>
+        <a href="#" id="bannerDetailBtn" class="banner-btn">عرض التفاصيل</a>
+      </div>
+
+      <button id="bannerClose" class="banner-close">&times;</button>
+    </div>
+  </div>
+</div> -->
+
+
+  
 <header class="main-header">
   <div class="container header-container">
-    <!-- الجهة اليسرى: الشعار + النص -->
-    <div class="header-logo-group">
-      <span class="logo-text">Zaid Auto</span>
-      <img src="image/logo3.png" alt="Zaid" class="logo-img">
-    </div>
+<div class="header-logo-group">
+  <a href="javascript:void(0)" onclick="showPage('home')" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+    <span class="logo-text">ZAID</span>
+    <img src="image/logo3.png" alt="ZAID" class="logo-img">
+  </a>
+</div>
 
     <!-- الجهة اليمنى: القائمة -->
     <nav class="desktop-nav">
       <a href="#" data-page="home">الرئيسية</a>
       <a href="#" data-page="services">الخدمات</a>
       <a href="#" data-page="pricing">الباقات</a>
-      <a href="#" data-page="offers">العروض</a>
+      <!-- <a href="#" data-page="offers">العروض</a> -->
       <a href="#" data-page="how-it-works">كيف يعمل؟</a>
       <a href="#" data-page="faq">الأسئلة الشائعة</a>
       <a href="#" data-page="about">من نحن</a>
@@ -58,7 +84,7 @@
     <a href="#" data-page="home">الرئيسية</a>
     <a href="#" data-page="services">الخدمات</a>
     <a href="#" data-page="pricing">الباقات</a>
-    <a href="#" data-page="offers">العروض</a>
+    <!-- <a href="#" data-page="offers">العروض</a> -->
     <a href="#" data-page="how-it-works">كيف يعمل؟</a>
     <a href="#" data-page="faq">الأسئلة الشائعة</a>
     <a href="#" data-page="about">من نحن</a>
@@ -78,11 +104,10 @@
   <div class="hero-modern-slide active" data-modern-slide="1">
     <div class="hero-modern-content">
       <h1 class="hero-modern-title">أتمتة ذكية تُحررك من الروتين</h1>
-      <p class="hero-modern-desc">ركّز على النمو — ودع Zaid يدير التواصل، المتابعة، والمهام المتكررة.</p>
-      <a href="#page-pricing" class="btn-primary hero-modern-btn">ابدأ رحلتك الآن</a>
+      <p class="hero-modern-desc">ركّز على النمو — ودع ZAID يدير التواصل، المتابعة، والمهام المتكررة.</p>
     </div>
     <div class="hero-modern-image">
-      <img src="image/hero1.png" alt="أتمتة ذكية" class="hero-modern-img">
+      <!-- <img src="image/hero1.png" alt="أتمتة ذكية" class="hero-modern-img"> -->
     </div>
   </div>
 
@@ -90,10 +115,9 @@
     <div class="hero-modern-content">
       <h1 class="hero-modern-title">ردود فورية، 24/7</h1>
       <p class="hero-modern-desc">لا ينام، لا يتعب، ويتعامل مع كل زائر كأنه عميل VIP.</p>
-      <a href="#page-contact" class="btn-primary hero-modern-btn">احجز استشارة مجانية</a>
     </div>
     <div class="hero-modern-image">
-      <img src="image/hero2.png" alt="ردود فورية" class="hero-modern-img">
+      <!-- <img src="image/hero2.png" alt="ردود فورية" class="hero-modern-img"> -->
     </div>
   </div>
 
@@ -101,10 +125,9 @@
     <div class="hero-modern-content">
       <h1 class="hero-modern-title">دمج سلس مع أدواتك الحالية</h1>
       <p class="hero-modern-desc">يعمل مع WhatsApp، Facebook، Notion، Google Sheets، والمزيد — دون تعديل في نظامك.</p>
-      <a href="#page-services" class="btn-secondary hero-modern-btn">استكشف الخدمات</a>
     </div>
     <div class="hero-modern-image">
-      <img src="image/hero3.png" alt="تكامل سلس" class="hero-modern-img">
+      <!-- <img src="image/hero3.png" alt="تكامل سلس" class="hero-modern-img"> -->
     </div>
   </div>
 
@@ -112,10 +135,9 @@
     <div class="hero-modern-content">
       <h1 class="hero-modern-title">وفر حتى 70 ساعة شهريًا</h1>
       <p class="hero-modern-desc">لأكثر من 120 عميل — الوقت الذي توفره يُعاد استثماره في النمو الحقيقي.</p>
-      <a href="#page-pricing" class="btn-primary hero-modern-btn">شاهد خطط الأسعار</a>
     </div>
     <div class="hero-modern-image">
-      <img src="image/hero4.png" alt="توفير الوقت" class="hero-modern-img">
+      <!-- <img src="image/hero4.png" alt="توفير الوقت" class="hero-modern-img"> -->
     </div>
   </div>
 
@@ -166,15 +188,15 @@
         <div class="cta-container">
           <h2>لا تدع الوقت يضيع — ابدأ التحوّل اليوم!</h2>
           <p class="cta-subtitle">
-            أكثر من 120 عميل استعادوا <strong>أكثر من 70 ساعة شهريًا</strong> بعد تفعيل نظام Zaid.<br>
+            أكثر من 120 عميل استعادوا <strong>أكثر من 70 ساعة شهريًا</strong> بعد تفعيل نظام ZAID.<br>
             الآن دورك.
           </p>
           <div class="cta-offer-badge">
-            🎁 عرض تجريبي مجاني لمدة 7 أيام — بدون بطاقة بنكية!
+            🎁 عرض تجريبي مجاني لمدة 3 أيام — بدون بطاقة بنكية!
           </div>
-          <button class="btn-primary cta-button" onclick="showPage('contact')">
-            احجز استشارتك المجانية الآن
-          </button>
+<button class="btn-primary cta-button" onclick="showPage('contact')">
+  احجز استشارتك المجانية الآن
+</button>
           <p class="cta-guarantee">✓ لا يوجد التزام — يمكنك الإلغاء في أي وقت</p>
         </div>
       </section>
@@ -184,7 +206,7 @@
 <section id="page-services" class="hidden">
   <div class="container">
     <div class="section-header text-center mb-4">
-      <h2 class="section-title">استكشف خدمات Zaid الذكية</h2>
+      <h2 class="section-title">استكشف خدمات ZAID الذكية</h2>
       <p class="section-subtitle">اختر فئتك، وسنعرض لك الحلول المصممة خصيصًا لطبيعة عملك.</p>
     </div>
 
@@ -218,28 +240,26 @@
     </section>
 <!-- صفحة العروض -->
 <!-- صفحة العروض -->
-<section id="page-offers" class="hidden">
+<!-- <section id="page-offers" class="hidden">
   <div class="container">
     <h2 class="text-center mb-4">العروض الحصرية</h2>
     <p class="text-center" style="color: var(--gray); margin-bottom: 40px;">
       عدد المقاعد محدود — لا تفوت الفرصة!
     </p>
 
-    <!-- شبكة العروض -->
     <div class="offers-grid" id="offersGrid"></div>
 
-    <!-- صفحة تفاصيل العرض -->
     <div id="offer-detail-section" class="hidden">
       <button class="btn-secondary" onclick="goBackToOffers()">← العودة إلى العروض</button>
       <div id="offer-detail-content" class="offer-detail-content"></div>
     </div>
   </div>
-</section>
+</section> -->
     <!-- الأسعار -->
     <section id="page-pricing" class="hidden">
       <h2 class="text-center mb-4">خطط الأسعار</h2>
       <div class="pricing-row-wide">
-        <div class="pricing-tier starter-tier">
+        <!-- <div class="pricing-tier starter-tier">
           <div class="tier-header">
             <div class="tier-badge">🟢 Starter</div>
             <h3>ابدأ رحلتك مع الذكاء الاصطناعي</h3>
@@ -253,11 +273,10 @@
               <li>دعم فني عبر البريد خلال <strong>48 ساعة</strong></li>
             </ul>
             <div class="tier-price">💰 <strong>$49</strong>/شهر</div>
-            <button class="btn-primary pricing-btn" onclick="showPage('contact')">ابدأ الآن</button>
-          </div>
-        </div>
+<button class="btn-primary pricing-btn" onclick="showPage('contact')">ابدأ الآن</button>          </div>
+        </div> -->
 
-        <div class="pricing-tier pro-tier featured">
+        <!-- <div class="pricing-tier pro-tier featured">
           <div class="featured-tag">الأكثر اختيارًا</div>
           <div class="tier-header">
             <div class="tier-badge">🔵 Pro</div>
@@ -275,7 +294,7 @@
             <button class="btn-primary pricing-btn featured" onclick="showPage('contact')">ابدأ الآن</button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="enterprise-section">
         <div class="enterprise-content">
@@ -318,7 +337,7 @@
         <div class="identity-section">
           <h1 class="section-title">من نحن؟</h1>
           <p class="section-intro">
-            Zaid ليس مجرد أداة. نحن شريكك الذكي في رحلة الأتمتة — نبدأ من حيث تتوقف أدواتك الحالية.
+            ZAID ليس مجرد أداة. نحن شريكك الذكي في رحلة الأتمتة — نبدأ من حيث تتوقف أدواتك الحالية.
           </p>
 
           <div class="identity-grid">
@@ -397,7 +416,7 @@
         <div class="partnership-cta">
           <h2>جاهز لتصبح الشريك التالي؟</h2>
           <p>استشارتك المجانية تنتظرك — لا التزام، لا بطاقات بنكية.</p>
-          <a href="https://wa.me/970592383787?text=مرحباً%2C%20أريد%20استشارة%20مجانية%20من%20Zaid" 
+          <a href="https://wa.me/970592383787?text=مرحباً%2C%20أريد%20استشارة%20مجانية%20من%20ZAID" 
    class="btn-primary btn-partner" target="_blank">
   ابدأ الآن
 </a>
@@ -449,7 +468,7 @@
       </div>
       <div class="faq-item">
         <h3>هل هناك عرض تجريبي؟</h3>
-        <p>نعم! عرض تجريبي مجاني لمدة 7 أيام — بدون بطاقة بنكية.</p>
+        <p>نعم! عرض تجريبي مجاني لمدة 3 أيام — بدون بطاقة بنكية.</p>
       </div>
       <div class="faq-item">
         <h3>هل يمكنني تغيير الباقة لاحقًا؟</h3>
@@ -469,12 +488,12 @@
     <div class="faq-group">
       <h2 class="faq-group-title">كيف يعمل؟</h2>
       <div class="faq-item">
-        <h3>كيف يبدأ العمل مع Zaid؟</h3>
+        <h3>كيف يبدأ العمل مع ZAID؟</h3>
         <p>نبدأ بجلسة استشارة مجانية عبر واتساب لفهم طبيعة عملك والتحديات التي تواجهها.</p>
       </div>
       <div class="faq-item">
         <h3>هل أحتاج لتغيير نظام عملي الحالي؟</h3>
-        <p>لا. Zaid يتكامل مع أدواتك الحالية (واتساب، موقع، Google Sheets...) دون تعديل.</p>
+        <p>لا. ZAID يتكامل مع أدواتك الحالية (واتساب، موقع، Google Sheets...) دون تعديل.</p>
       </div>
       <div class="faq-item">
         <h3>هل النظام يعمل تلقائيًا؟</h3>
@@ -482,7 +501,7 @@
       </div>
       <div class="faq-item">
         <h3>كم من الوقت أوفر شهريًا؟</h3>
-        <p>أكثر من 120 عميل وفّروا حتى 70 ساعة شهريًا باستخدام Zaid.</p>
+        <p>أكثر من 120 عميل وفّروا حتى 70 ساعة شهريًا باستخدام ZAID.</p>
       </div>
       <div class="faq-item">
         <h3>هل يمكنني تعديل النظام لاحقًا؟</h3>
@@ -495,10 +514,10 @@
       <h2 class="faq-group-title">من نحن</h2>
       <div class="faq-item">
         <h3>من أنتم؟</h3>
-        <p>Zaid هو مشروع فردي يهدف لتمكين رواد الأعمال عبر أنظمة أتمتة ذكية — لا نبيع أدوات، بل نبني شراكات.</p>
+        <p>ZAID هو مشروع فردي يهدف لتمكين رواد الأعمال عبر أنظمة أتمتة ذكية — لا نبيع أدوات، بل نبني شراكات.</p>
       </div>
       <div class="faq-item">
-        <h3>لماذا اسم Zaid؟</h3>
+        <h3>لماذا اسم ZAID؟</h3>
         <p>الاسم مستوحى من كلمة 'زيادة' — لأن هدفنا هو زيادة إنتاجيتك ووقتك.</p>
       </div>
       <div class="faq-item">
@@ -574,7 +593,7 @@
         لا يوجد نماذج، لا انتظار، ولا التزام.
       </p>
 
-<a href="https://wa.me/970592383787?text=مرحباً%2C%20أنا%20مهتم%20بخدمة%20Zaid.%20هل%20يمكنك%20مساعدتي؟" 
+<a href="https://wa.me/970592383787?text=مرحباً%2C%20أنا%20مهتم%20بخدمة%20ZAID.%20هل%20يمكنك%20مساعدتي؟" 
    class="whatsapp-cta" target="_blank">
   <span class="whatsapp-icon">💬</span>
   تحدث معي الآن على واتساب
@@ -603,11 +622,11 @@
     </div>
   </div>
 </section>
-<!-- كيف يعمل Zaid؟ -->
+<!-- كيف يعمل ZAID؟ -->
 <section id="page-how-it-works" class="how-it-works-section hidden">
   <div class="container">
     <div class="section-header text-center">
-      <h2 class="section-title">Zaid لا يُبرمج — بل يُفهم</h2>
+      <h2 class="section-title">ZAID لا يُبرمج — بل يُفهم</h2>
       <p class="section-subtitle">
         نحن لا نبيع روبوتات جاهزة. نبني لك شريكًا ذكيًّا يتعلم طريقة عملك ويُنفّذها نيابة عنك.
       </p>
@@ -619,7 +638,7 @@
         <div class="mind-icon">👂</div>
         <h3>الاستماع الذكي</h3>
         <p>
-          Zaid لا يبدأ بالأكواد — بل بمحادثة.  
+          ZAID لا يبدأ بالأكواد — بل بمحادثة.  
           يفهم: من هم عملاؤك؟ ما هي مهامك المتكررة؟  
           وأين تضيع وقتك؟
         </p>
@@ -653,7 +672,7 @@
 
     <div class="text-center mt-50">
       <button class="btn-primary btn-large" onclick="showPage('contact')">
-        اجعل Zaid شريكك الذكي
+        اجعل ZAID شريكك الذكي
       </button>
     </div>
   </div>
@@ -675,7 +694,7 @@
     <div class="footer-container">
       <div class="footer-row">
         <div class="footer-column">
-          <h4>Zaid</h4>
+          <h4>ZAID</h4>
           <p>حلول ذكاء اصطناعي شاملة لأي مجال عملك.</p>
           <div class="social-icons">
             <a href="https://facebook.com/yourpage" target="_blank" class="social-icon" title="فيسبوك">
@@ -715,7 +734,7 @@
 <div class="footer-column">
   <h4>تواصل معنا</h4>
   <ul class="contact-info">
-    <li>📧 البريد الإلكتروني: <a href="mailto:zaidbusiness55@gmail.com">zaidbusiness55@gmail.com</a></li>
+    <li>📧 البريد الإلكتروني: <a href="mailto:ZAIDbusiness55@gmail.com">ZAIDbusiness55@gmail.com</a></li>
     <li>📞 الهاتف: +970 59 238 3787</li>
     <li>📍 العنوان: فلسطين</li>
     <li>💬 <a href="https://wa.me/970592383787" target="_blank">واتساب</a></li>
@@ -725,15 +744,27 @@
         <div class="footer-column">
           <h4>اشترك معنا</h4>
           <p>اشترك في نشرتنا البريدية للحصول على آخر التحديثات والعروض:</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
-            <button type="submit">اشترك</button>
-          </form>
-        </div>
+<div class="footer-column">
+  <h4>اشترك معنا</h4>
+  <p>اشترك في نشرتنا البريدية للحصول على آخر التحديثات والعروض:</p>
+  <div class="footer-newsletter">
+    <iframe 
+      data-tally-src="https://tally.so/embed/Bz7JV1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+      loading="lazy" 
+      width="100%" 
+      height="100" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      title="البريد الالكتروني والرسالة"
+      class="footer-newsletter-iframe"
+    ></iframe>
+  </div>
+</div>        </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Zaid. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2026 ZAID. جميع الحقوق محفوظة.</p>
         <!-- <div class="footer-links">
           <a href="#">سياسة الخصوصية</a>
           <a href="#">شروط الاستخدام</a>
@@ -763,6 +794,5 @@
   </div>
 </div>
 </body>
-
 
 </html>
