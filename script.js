@@ -2,6 +2,7 @@
 // المتغيرات العامة
 // ========================
 let currentServiceGroup = null;
+const FEATURED_OFFER_ID = 1; // ← غيّر هذا الرقم إلى 1 أو 2 أو 3 أو 4
 
 // ========================
 // دوال مساعدة
@@ -119,28 +120,32 @@ function showAllCategories() {
 // ========================
 // === صفحة العروض الجديدة (4 عروض) ===
 // ========================
-const offers = [
-  {
-    id: 1,
-    title: "عرض البداية السريع",
-    desc: "بناء موقع مع نظام اتمتة متكامل لمدة 4 شهور ",
-    price: "$399",
-    buyers: 2,
-    maxBuyers: 30,
-    details: `<h2>عرض البداية السريع</h2>
-    <p>لاصحاب المتاجر والمشاريع التي لا تمتلك موقع الكتروني </p>
-    <ul><li>كلفة تصميم الموقع 500$</li>
-        <li>كلفة نظام الاتمتة المتكامل 500$</li> 
-        <li>هدف العرض:دعم المتاجر والمشاريع المبتدئة وتقليل التكلفة على اصحابها</li>
-        <li>مدة التسليم اسبوعين من تاريخ اتفاق الخدمة</li></ul>
-        <p>⚠️ <strong>ملاحظة:</strong> العرض ينتهي عند اكتمال 30 مشتريًا.</p>
-        <h3> التفاصيل </h3>
-        <p>  </p>
+// const offers = [
+//   {
+//     id: 1,
+//     title: "شركاء التأسيس",
+//     desc: "ادفع 20% فقط والباقي بعد نجاح التشغيل تماماً.",
+//     price: "يبدأ من 50$",
+//     buyers: 2,
+//     maxBuyers: 30,
+//     details: `<h2> عرض شركاء التأسيس</h2>
+//     <h4>في ZAID، نؤمن بأن النتائج هي لغتنا الوحيدة. ولأننا شركة ناشئة تبحث عن بناء قصص نجاح حقيقية، قررنا أن نتحمل نحن المخاطرة بدلاً منك في خطوتك الأولى نحو الأتمتة</h4>
+//     <h3>ماذا ستحصل عليه في هذا العرض؟</h3>
+//     <ul><li>فقط لاول 30 مشتركا </li>
+//         <li>نظام الدفع المرن: تدفع رسوم حجز 20% فقط، ولا نطلب منك الـ 80% المتبقية إلا بعد مرور أسبوع كامل على عمل نظامك بكفاءة وبدون أخطاء.</li> 
+//         <li>أولوية "التنفيذ اليدوي": ستحصل على إشراف مباشر من المؤسسين لضمان أن الحل المخصص يناسب احتياجات عملك بدقة.</li>
+//         <li>خصم "الولاء الدائم": كعضو في أول 30 شريكاً، ستحصل على خصم 40% ثابت على أي تطويرات أو اشتراكات مستقبلية لشركتك مدى الحياة.</li>
+//         <li>مدة التسليم اسبوعين من تاريخ اتفاق الخدمة</li>
+//         </ul>
+//         <p>⚠️ <strong>ملاحظة:</strong> العرض ينتهي عند اكتمال 30 مشتريًا.</p>
+//         <h3> شروط العرض </h3>
+//         <p>  العرض متاح فقط لأول 30 طلباً مكتملاً.</p>
+//         <p> في حال لم نتمكن من تشغيل النظام المتفق عليه تقنياً، نلتزم برد رسوم الحجز (20%) فوراً. </p>
 
-        `
-  },
+//         `
+//   },
 
-];
+// ];
 
 function renderOffers() {
   const grid = document.getElementById('offersGrid');
@@ -446,6 +451,7 @@ function showAllCategories() {
 document.addEventListener('DOMContentLoaded', () => {
   // عرض جميع الخدمات عند التحميل
   renderServices('all');
+  loadFeaturedOffer();
 
   // ربط أزرار التصنيف
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -480,4 +486,255 @@ window.addEventListener('popstate', function() {
   } else {
     showPage('home');
   }
+});
+
+// === العرض الذي تحدده أنت ===
+const featuredOffer = {
+  id: 1,
+  title: "عرض رمضان المبارك",
+  desc: "اتمتة اول مهمة بعرض يصل الى 40%",
+};
+
+// تحميل البيانات
+document.getElementById('bannerTitle').textContent = featuredOffer.title;
+document.getElementById('bannerDesc').textContent = featuredOffer.desc;
+document.getElementById('bannerPrice').textContent = featuredOffer.price;
+
+// العناصر
+const banner = document.getElementById('smartBanner');
+const collapsed = document.querySelector('.banner-collapsed');
+const expanded = document.querySelector('.banner-expanded');
+const closeBtn = document.getElementById('bannerClose');
+const detailBtn = document.getElementById('bannerDetailBtn');
+
+let isExpanded = false;
+
+// عند النقر على الشريط (باستثناء الزرين)
+banner.addEventListener('click', function(e) {
+  if (e.target === closeBtn || e.target === detailBtn) return;
+  toggleBanner();
+});
+
+// عند النقر على زر الإغلاق
+closeBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  toggleBanner();
+});
+
+// عند النقر على "عرض التفاصيل"
+detailBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  
+  // الانتقال إلى صفحة العروض وعرض التفاصيل
+  // showPage('offers');
+  // setTimeout(() => {
+  //   const offer = offers.find(o => o.id === featuredOffer.id);
+  //   if (offer) {
+  //     const grid = document.getElementById('offersGrid');
+  //     const detailSection = document.getElementById('offer-detail-section');
+  //     const detailContent = document.getElementById('offer-detail-content');
+      
+  //     if (grid && detailSection && detailContent) {
+  //       grid.classList.add('hidden');
+  //       detailContent.innerHTML = offer.details;
+  //       detailSection.classList.remove('hidden');
+  //     }
+  //   }
+  //   if (isExpanded) toggleBanner();
+  // }, 300);
+});
+
+function toggleBanner() {
+  if (isExpanded) {
+    expanded.classList.add('hidden');
+    collapsed.classList.remove('hidden');
+  } else {
+    collapsed.classList.add('hidden');
+    expanded.classList.remove('hidden');
+  }
+  isExpanded = !isExpanded;
+}
+// === تحميل تلقائي لبيانات العرض الأبرز ===
+function loadFeaturedOffer() {
+  const offer = offers.find(o => o.id === FEATURED_OFFER_ID);
+  if (offer) {
+    document.getElementById('bannerTitle').textContent = offer.title;
+    document.getElementById('bannerDesc').textContent = offer.desc;
+    document.getElementById('bannerPrice').textContent = offer.price;
+  }
+}
+
+// === زر "عرض التفاصيل" في الشريط ===
+document.getElementById('bannerDetailBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  // اذهب إلى صفحة العروض
+  showPage('offers');
+
+  // بعد قليل، افتح تفاصيل العرض المحدد
+  setTimeout(() => {
+    const offer = offers.find(o => o.id === FEATURED_OFFER_ID);
+    if (offer) {
+      const grid = document.getElementById('offersGrid');
+      const detailSection = document.getElementById('offer-detail-section');
+      const detailContent = document.getElementById('offer-detail-content');
+
+      if (grid && detailSection && detailContent) {
+        grid.classList.add('hidden');
+        detailContent.innerHTML = offer.details;
+        detailSection.classList.remove('hidden');
+      }
+    }
+  }, 300);
+});
+// === معالجة نموذج البريد الإلكتروني ===
+function handleNewsletter(event) {
+  event.preventDefault();
+  const emailInput = event.target.querySelector('input[type="email"]');
+  const email = emailInput.value.trim();
+  
+  if (!email) {
+    alert('يرجى إدخال بريد إلكتروني صحيح');
+    return;
+  }
+  
+  // يمكنك إرسال البريد إلى خادمك هنا
+  console.log('تم تسجيل البريد:', email);
+  
+  // عرض رسالة نجاح
+  alert('تم تسجيل اشتراكك بنجاح! شكراً لك.');
+  
+  // إعادة تعيين النموذج
+  event.target.reset();
+}
+// ========================
+// === الهيرو سلايدر - إصلاح شامل ===
+// ========================
+let currentSlide = 1;
+let totalSlides = 4;
+let slideInterval;
+let isAutoPlaying = true;
+
+// عرض الشريحة المحددة
+function showSlide(slideNumber) {
+  // إخفاء جميع الشرائح
+  document.querySelectorAll('.hero-modern-slide').forEach(slide => {
+    slide.classList.remove('active');
+  });
+  
+  // إخفاء جميع النقاط
+  document.querySelectorAll('.dot').forEach(dot => {
+    dot.classList.remove('active');
+  });
+  
+  // عرض الشريحة المحددة
+  const slideToShow = document.querySelector(`.hero-modern-slide[data-modern-slide="${slideNumber}"]`);
+  if (slideToShow) {
+    slideToShow.classList.add('active');
+  }
+  
+  // تفعيل النقطة المحددة
+  const dotToShow = document.querySelector(`.dot[data-dot="${slideNumber}"]`);
+  if (dotToShow) {
+    dotToShow.classList.add('active');
+  }
+  
+  currentSlide = slideNumber;
+}
+
+// الشريحة التالية
+function nextSlide() {
+  let next = currentSlide + 1;
+  if (next > totalSlides) next = 1;
+  showSlide(next);
+}
+
+// الشريحة السابقة
+function prevSlide() {
+  let prev = currentSlide - 1;
+  if (prev < 1) prev = totalSlides;
+  showSlide(prev);
+}
+
+// بدء التمرير التلقائي
+function startAutoSlide() {
+  if (slideInterval) clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000); // كل 5 ثواني
+  isAutoPlaying = true;
+}
+
+// إيقاف التمرير التلقائي
+function stopAutoSlide() {
+  clearInterval(slideInterval);
+  isAutoPlaying = false;
+}
+
+// ========================
+// === ربط الأحداث ===
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+  // التحقق من وجود الهيرو
+  const heroSection = document.querySelector('.hero-modern-section');
+  if (!heroSection) return;
+  
+  // عرض الشريحة الأولى عند التحميل
+  showSlide(1);
+  
+  // بدء التمرير التلقائي
+  startAutoSlide();
+  
+  // ربط النقاط
+  document.querySelectorAll('.dot').forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stopAutoSlide();
+      const slideNumber = parseInt(dot.dataset.dot);
+      showSlide(slideNumber);
+      startAutoSlide();
+    });
+  });
+  
+  // إيقاف التمرير عند تمرير الماوس فوق الهيرو
+  heroSection.addEventListener('mouseenter', () => {
+    if (isAutoPlaying) {
+      stopAutoSlide();
+    }
+  });
+  
+  // استئناف التمرير عند مغادرة الماوس
+  heroSection.addEventListener('mouseleave', () => {
+    if (!isAutoPlaying) {
+      startAutoSlide();
+    }
+  });
+  
+  // منع التمرير التلقائي عند النقر على الهيرو
+  heroSection.addEventListener('click', (e) => {
+    // تجاهل النقر على الأزرار أو الروابط
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+      return;
+    }
+    
+    // إيقاف واستئناف التمرير بالنقر
+    if (isAutoPlaying) {
+      stopAutoSlide();
+    } else {
+      startAutoSlide();
+    }
+  });
+  
+  // دعم مفاتيح الأسهم
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    } else if (e.key === 'ArrowLeft') {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+    }
+  });
 });
