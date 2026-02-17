@@ -483,7 +483,7 @@ body {
   align-items: center;
 }
 
-/* عنوان Zaid Auto */
+/* عنوان ZAID Auto */
 .hero-brand {
   font-size: 3.2rem;
   font-weight: 800;
@@ -1085,7 +1085,7 @@ body {
     width: 44px !important;
     height: 44px !important;
     border-radius: 50% !important;
-    background: rgba(99, 102, 241, 0.2) !important; /* لون Zaid شفاف */
+    background: rgba(99, 102, 241, 0.2) !important; /* لون ZAID شفاف */
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     font-size: 1.3rem !important;
@@ -1402,7 +1402,7 @@ body {
 }
 
 /* ======================================== */
-/* ✅ استجابة متكاملة للجوال - Zaid Auto */
+/* ✅ استجابة متكاملة للجوال - ZAID Auto */
 /* ======================================== */
 
 @media (max-width: 992px) {
@@ -2365,7 +2365,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  direction: ltr; /* لعرض "Zaid Auto" بالاتجاه الصحيح */
+  direction: ltr; /* لعرض "ZAID Auto" بالاتجاه الصحيح */
 }
 
 /* === القائمة للكمبيوتر === */
@@ -3019,7 +3019,7 @@ body {
     font-size: 0.85rem;
   }
 }
-/* === قسم "كيف يعمل؟" - عقل Zaid الذكي === */
+/* === قسم "كيف يعمل؟" - عقل ZAID الذكي === */
 .how-it-works-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8fafc, #f0f4ff);
@@ -3740,3 +3740,563 @@ body {
   position: absolute;
   right: -20px;
 }
+/* === Smart Banner - نسخة محسّنة لـ RTL === */
+.smart-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: linear-gradient(to right, var(--primary), #ec4899);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  cursor: pointer;
+}
+
+.banner-collapsed {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+.banner-collapsed:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.banner-expanded {
+  padding: 18px 24px;
+  animation: bannerSlideDown 0.3s ease;
+}
+@keyframes bannerSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* التوزيع: وصف على اليمين، إجراءات على اليسار (لـ RTL) */
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  direction: rtl; /* ← ضمان دعم كامل لـ RTL */
+  text-align: right;
+}
+
+/* وصف العرض (الجانب الأيمن بصريًا) */
+.banner-desc {
+  flex: 1;
+  min-width: 200px;
+}
+.banner-desc strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+}
+.banner-desc p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* الإجراءات: سعر + زر (الجانب الأيسر بصريًا) */
+.banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.banner-price {
+  background: rgba(255,255,255,0.25);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  min-width: 70px;
+  text-align: center;
+}
+
+.banner-btn {
+  background: white;
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* زر الإغلاق */
+.banner-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.banner-close:hover {
+  background: rgba(0,0,0,0.25);
+}
+
+/* الجوال */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .banner-actions {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+  .banner-btn {
+    padding: 10px 24px;
+    font-size: 1.05rem;
+  }
+}
+
+/* ========== نموذج الاشتراك في الفوتر - محسّن للألوان ========= */
+.footer-newsletter {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  padding: 15px;
+}
+
+.footer-newsletter:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter-iframe {
+  border: none;
+  display: block;
+  width: 100%;
+  min-height: 100px;
+}
+
+/* تحسين حقول الإدخال - ألوان فاتحة وواضحة */
+.footer-newsletter iframe input[type="email"],
+.footer-newsletter iframe input[type="text"],
+.footer-newsletter iframe input[type="tel"],
+.footer-newsletter iframe textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-family: 'Tajawal', sans-serif !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.footer-newsletter iframe input[type="email"]:focus,
+.footer-newsletter iframe input[type="text"]:focus,
+.footer-newsletter iframe input[type="tel"]:focus,
+.footer-newsletter iframe textarea:focus {
+  outline: none !important;
+  border-color: #6366f1 !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+.footer-newsletter iframe input[type="email"]::placeholder,
+.footer-newsletter iframe input[type="text"]::placeholder,
+.footer-newsletter iframe input[type="tel"]::placeholder,
+.footer-newsletter iframe textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+/* تحسين زر الإرسال - أزرق فاتح واضح */
+.footer-newsletter iframe button[type="submit"],
+.footer-newsletter iframe .tally-button {
+  width: 100% !important;
+  padding: 12px !important;
+  background: linear-gradient(to right, #6366f1, #8b5cf6) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-family: 'Tajawal', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+  margin-top: 10px !important;
+}
+
+.footer-newsletter iframe button[type="submit"]:hover,
+.footer-newsletter iframe .tally-button:hover {
+  background: linear-gradient(to right, #4f46e5, #7c3aed) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4) !important;
+}
+
+.footer-newsletter iframe button[type="submit"]:active,
+.footer-newsletter iframe .tally-button:active {
+  transform: translateY(0) !important;
+}
+
+/* تحسين التسميات - نص أبيض واضح */
+.footer-newsletter iframe label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-family: 'Tajawal', sans-serif !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 14px !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* تحسين الرسائل - ألوان واضحة */
+.footer-newsletter iframe .success-message,
+.footer-newsletter iframe .error-message,
+.footer-newsletter iframe .tally-success,
+.footer-newsletter iframe .tally-error {
+  padding: 12px !important;
+  border-radius: 8px !important;
+  margin-top: 12px !important;
+  font-family: 'Tajawal', sans-serif !important;
+  font-size: 13px !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.footer-newsletter iframe .success-message,
+.footer-newsletter iframe .tally-success {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #a7f3d0 !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+}
+
+.footer-newsletter iframe .error-message,
+.footer-newsletter iframe .tally-error {
+  background: rgba(239, 68, 68, 0.2) !important;
+  color: #fecaca !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+}
+
+/* تحسين الحقول عند الخطأ */
+.footer-newsletter iframe input:invalid,
+.footer-newsletter iframe input.error {
+  border-color: #ef4444 !important;
+}
+
+/* تحسين روابط داخل الفورم */
+.footer-newsletter iframe a {
+  color: #6366f1 !important;
+  text-decoration: underline !important;
+}
+
+.footer-newsletter iframe a:hover {
+  color: #4f46e5 !important;
+}
+
+/* استجابة للجوال */
+@media (max-width: 991px) {
+  .footer-newsletter {
+    margin-top: 15px;
+    padding: 12px;
+  }
+  
+  .footer-newsletter iframe input[type="email"],
+  .footer-newsletter iframe input[type="text"],
+  .footer-newsletter iframe input[type="tel"],
+  .footer-newsletter iframe textarea {
+    font-size: 13px !important;
+    padding: 10px 12px !important;
+  }
+  
+  .footer-newsletter iframe button[type="submit"],
+  .footer-newsletter iframe .tally-button {
+    font-size: 13px !important;
+    padding: 10px !important;
+  }
+  
+  .footer-newsletter iframe label {
+    font-size: 13px !important;
+  }
+}
+
+/* تحسين إضافي - ضمان وضوح جميع العناصر */
+.footer-newsletter iframe * {
+  color: rgba(255, 255, 255, 0.9) !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* تحسين حقول الاختيار (checkbox/radio) */
+.footer-newsletter iframe input[type="checkbox"],
+.footer-newsletter iframe input[type="radio"] {
+  accent-color: #6366f1 !important;
+}
+
+.footer-newsletter iframe input[type="checkbox"]:checked,
+.footer-newsletter iframe input[type="radio"]:checked {
+  background-color: #6366f1 !important;
+  border-color: #6366f1 !important;
+}
+/* ========== حل بديل شامل ========= */
+.footer .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer .newsletter-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer .newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer .newsletter-form input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.footer .newsletter-form button {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.footer .newsletter-form button:hover {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+/* === Hero Modern Section - نص فقط بدون صور === */
+.hero-modern-section {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0e2b, #1e1b4b);
+  color: white;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+.hero-modern-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 60% 40%, rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 90%, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+}
+
+.hero-modern-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4%;
+  gap: 2rem;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-modern-slide.active {
+  display: flex;
+  opacity: 1;
+}
+
+.hero-modern-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+.hero-modern-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary), #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero-modern-desc {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-modern-btn {
+  padding: 16px 48px;
+  font-size: 1.25rem;
+  border-radius: 16px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary), #ec4899);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.hero-modern-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* إخفاء الصورة تماماً */
+.hero-modern-image,
+.hero-modern-img {
+  display: none !important;
+}
+
+/* نقاط المؤشر */
+.hero-modern-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* === الجوال === */
+@media (max-width: 991px) {
+  .hero-modern-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero-modern-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .hero-modern-btn {
+    padding: 14px 40px;
+    font-size: 1.15rem;
+    border-radius: 14px;
+  }
+  
+  .hero-modern-dots {
+    bottom: 30px;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* === تأثيرات الحركة === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
