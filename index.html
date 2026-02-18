@@ -11,9 +11,36 @@
 <script type="module">
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-	createChat({
-		webhookUrl: 'https://zaid2005.app.n8n.cloud/webhook/a468c3e8-ebbc-4eef-a336-d1cc364ac968/chat'
-	});
+createChat({
+	webhookUrl: 'https://zaid2005.app.n8n.cloud/webhook/a468c3e8-ebbc-4eef-a336-d1cc364ac968/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	loadPreviousSession: true,
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'en',
+	initialMessages: [
+		'كيف بقدر ادخل شغلي لعالم الذكاء الاصطناعي؟',
+		'ما طبيعة ربط الخدمة مع حساباتي على مواقع التواصل الاجتماعي ؟'
+	],
+	i18n: {
+		en: {
+			title: 'مرحبا',
+			subtitle: "تكلم مع احمد من فريق ZAID  للأتمتة",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Type your question..',
+		},
+	},
+	enableStreaming: false,
+});
+
 </script>
 
   <!-- Open Graph -->
@@ -804,5 +831,6 @@
 </body>
 
 </html>
+
 
 
